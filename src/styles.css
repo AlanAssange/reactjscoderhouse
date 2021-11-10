@@ -3,7 +3,7 @@
     padding: 0;
   }
   
-  p {
+  .logo {
       color: white;
   }
 
@@ -36,4 +36,15 @@
   .nav-list li {
     letter-spacing: 3px;
     margin-left: 32px;
+  }
+
+  .wrapper {
+    width: calc(33% - 270px);
+    margin: 55px;
+    border: 2px solid;
+    border-radius: 3px;
+  }
+
+  .appleWatch {
+    width: 200px;
   }
