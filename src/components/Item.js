@@ -1,11 +1,21 @@
 import React from 'react'
 
-export const Item = ({prod}) => {
+
+export const Item = ({ nombre, genero, descripcion,imagen }) => {
     return (
-    <article key={prod.id} className="card-stylized">
-        <img src={prod.img} alt={prod.name}/>
-        <h3>{prod.name}</h3>
-        <p>Precio: ${prod.price}</p>
-    </article>
-    )
-}
+      <div
+        className="item"
+        style={{
+          paddingLeft: '5vw',
+          textAlign: 'left',
+        }}
+      >
+        <h6>{nombre}</h6>
+        <li>Género {genero}</li>
+        <p>{descripcion}</p>
+        <img src={imagen}/>
+        <hr></hr>
+      </div>
+    );
+  };
+  
