@@ -48,11 +48,8 @@
 
   .item {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 200px;
-    flex-wrap: wrap;
   }
+
 
   .card-img {
     width: 200px;

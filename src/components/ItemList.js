@@ -3,15 +3,15 @@ import { Item } from './Item'
 
 export const ItemList = () => {
   const [hp, setHp] = useState([])
-    useEffect((async) => {
-      fetch('https://fakestoreapi.com/products?limit=10')
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          setHp(data);
-        });
-    }, []);
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products?limit=10')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setHp(data);
+      });
+  }, []);
 
     return ( <div>{hp !== false ? 
     
