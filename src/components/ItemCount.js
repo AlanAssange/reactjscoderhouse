@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 export const ItemCount = ({stock}) => {
-    const [counter, setCounter] = useState(1)
+    const [counter, setCounter] = useState(5)
     
     const incrementar = () => {
         if(stock>counter){

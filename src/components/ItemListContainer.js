@@ -1,5 +1,4 @@
 import React, {useEffect,useState} from 'react'
-import { stock } from '../data/stock'
 import { pedirDatos } from '../helpers/pedirDatos'
 import { ItemList } from './ItemList'
 

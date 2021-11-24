@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import { Item } from './Item'
 
-export const ItemList = ({productos}) => {
-    const [hp, setHp] = useState(false);
-
+export const ItemList = () => {
+  const [hp, setHp] = useState([])
     useEffect((async) => {
-      fetch('http://hp-api.herokuapp.com/api/characters')
+      fetch('https://fakestoreapi.com/products?limit=10')
         .then((response) => {
           return response.json();
         })
@@ -13,19 +12,15 @@ export const ItemList = ({productos}) => {
           setHp(data);
         });
     }, []);
-  
-    useEffect(() => {
-      console.log(hp);
-    }, [hp]);
 
     return ( <div>{hp !== false ? 
     
             hp.map((producto, i)=>(
-              <Item 
-                nombre={producto.name} 
+              <Item key={i}
                 imagen={producto.image}
-                genero={producto.gender} 
-                descripcion={producto.yearOfBirth}/>
+                nombre={producto.title} 
+                precio={producto.price} 
+                descripcion={producto.category}/>
             ))
               
             : 

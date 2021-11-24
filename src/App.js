@@ -2,18 +2,22 @@
 import "./styles.css";
 import NavBar from "./components/NavBar";
 import { ItemListContainer } from "./components/ItemListContainer";
-import Products from "./components/Products";
-import { Hp } from "./components/Hp";
+import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
+import { ItemDetailContainer } from "./components/ItemDetailContainer";
+import { CartView } from "./components/CartView";
 
 function App() {
   return (
     <>
+      <BrowserRouter>
       <NavBar/>
-      <main>
-      <Hp/>
-      <ItemListContainer greeting="Hola Coder!"/>
-      <Products stock="10"/>
-      </main>
+      <Routes>
+          <Route path="/" element={ <ItemListContainer/>}/>
+          <Route path="/category" element={<ItemDetailContainer/>}/>
+          <Route path="/cart" element={<CartView/>}/>
+          <Route path="*" element={<Navigate to="/"/>}/>
+      </Routes>
+      </BrowserRouter>
     </>
   )
 }

@@ -1,20 +1,15 @@
 import React from 'react'
+import ItemCount from './ItemCount';
 
 
-export const Item = ({ nombre, genero, descripcion,imagen }) => {
+export const Item = ({ nombre, precio, descripcion,imagen }) => {
     return (
-      <div
-        className="item"
-        style={{
-          paddingLeft: '5vw',
-          textAlign: 'left',
-        }}
-      >
-        <h6>{nombre}</h6>
-        <li>Género {genero}</li>
+      <div className="item">
+        <img className="card-img" alt="merch" src={imagen}/>
+        <h3>{nombre}</h3>
+        <p>Precio {precio}</p>
         <p>{descripcion}</p>
-        <img src={imagen}/>
-        <hr></hr>
+        <ItemCount/>
       </div>
     );
   };

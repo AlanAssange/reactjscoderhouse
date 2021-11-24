@@ -5,7 +5,7 @@ export const Products = () => {
     return (
         
         <fragment className="wrapper">
-           
+           <ItemCount></ItemCount>
         </fragment>
         
     )
