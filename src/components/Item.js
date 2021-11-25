@@ -11,6 +11,7 @@ export const Item = ({ nombre, precio, descripcion,imagen }) => {
         <p>Precio {precio}</p>
         <p>{descripcion}</p>
         <ItemCount/>
+        <button>Ver más</button>
         </article>
       </div>
     );
