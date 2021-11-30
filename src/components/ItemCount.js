@@ -1,30 +1,21 @@
 import React, {useState} from 'react'
 
-export const ItemCount = ({stock}) => {
-    const [counter, setCounter] = useState(5)
+export const ItemCount = ({max}) => {
+    const [counter, setCounter] = useState(15)
     
     const incrementar = () => {
-        if(stock>counter){
-        setCounter(counter+1)
-        }else {
-            alert("Fuera de stock")
-        }
+       counter < max && setCounter(counter + 1)
     }
 
     const decrementar = () => {
-        if(counter>1){
-        setCounter(counter-1);
-        }else {
-            alert("No se puede disminuir mas")
-        }
+        counter > 0 && setCounter(counter - 1)
     }
     return (
-        <div>
-            <h2>{counter}</h2>
-            <fragment>
-                <button onClick={decrementar}>-</button>
-                <button onClick={incrementar}>+</button>
-            </fragment>
+        <div className="counter-flex">
+            <button onClick={decrementar}>-</button>
+             <h2>{counter}</h2>
+             <button onClick={incrementar}>+</button>
+             <button>Agregar al carrito</button>
         </div>
     )
 }

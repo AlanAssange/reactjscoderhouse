@@ -13,7 +13,7 @@ export const ItemList = () => {
       });
   }, []);
 
-    return ( <div>{hp !== false ? 
+    return ( <div className="item-list">{hp !== false ? 
     
             hp.map((producto, i)=>(
               <Item key={i}
