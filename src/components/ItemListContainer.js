@@ -1,11 +1,16 @@
 import React, {useEffect,useState} from 'react'
+import { useContext } from 'react'
 import { useParams } from 'react-router'
+import { MiContext } from '../context/MiContext'
 import { pedirDatos } from '../helpers/pedirDatos'
 import { ItemList } from './ItemList'
 
 
 
 export const ItemListContainer = () => {
+
+    const context = useContext(MiContext);
+    
 
     const [loading, setLoading] = useState(false)
     const [productos, setProductos] = useState ([])

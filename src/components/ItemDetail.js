@@ -51,8 +51,8 @@ export const ItemDetail = ({id, name, img, desc, price, category, stock}) => {
                     :   <Link to="/cart" className="btn btn-success d-block">Terminar mi compra</Link>
             }
 
-            <button className="btn btn-primary" onClick={handleVolver}>Volver</button>
-            <button className="btn btn-outline-primary" onClick={handleVolverInicio}>Volver al inicio</button>
+            <button  onClick={handleVolver}>Volver</button>
+            <button   onClick={handleVolverInicio}>Volver al inicio</button>
         </div>
     )
 }

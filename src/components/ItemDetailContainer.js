@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router'
+import { MiContext } from '../context/CartContext'
 import {ItemDetail} from "./ItemDetail"
 import {pedirDatos} from "../helpers/pedirDatos"
 
 
 export const ItemDetailContainer = () => {
+    const usuario = "jorge"
+    const {usuario: user, admin} = useContext(MiContext)
 
-
+    const context = useContext(MiContext);
+    
 
     const [item, setItem] = useState()
     const [loading, setLoading] = useState(false)
