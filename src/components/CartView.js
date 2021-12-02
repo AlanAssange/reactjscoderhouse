@@ -1,10 +1,11 @@
 import React from 'react'
 import { useContext } from 'react/cjs/react.development'
 import { CartContext } from '../context/CartContext'
+import { CartItem } from './CartItem'
 
-export const CartView = () => {
+export const CartView = ({}) => {
 
-    const {carrito} = useContext(CartContext)
+    const {carrito, vaciarCarrito} = useContext(CartContext)
 
     return (
         <div>
@@ -12,15 +13,16 @@ export const CartView = () => {
             <hr></hr>
         <section>
             {
-                carrito.map((prod)=> (
-                    <div>
-                        <h3>{prod.nombre}</h3>
-                        <p>Precio: ${prod.precio}</p>
-                        <p>Cantidad: {prod.cantidad}</p>
-                    </div>
+                carrito.map((prod)=> (<CartItem{...prod}/>
+                    
                  ))
             }
         </section>
+        <hr></hr>
+        <div>
+            <button onClick={vaciarCarrito}>Vaciar Carrito</button>
+            <button>Terminar mi compra</button>
+        </div>
         </div>
     )
 }
