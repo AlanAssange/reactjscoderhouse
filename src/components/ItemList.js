@@ -4,7 +4,7 @@ import { Item } from './Item'
 export const ItemList = () => {
   const [hp, setHp] = useState([])
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=10')
+    fetch('https://fakestoreapi.com/products?limit=11')
       .then((response) => {
         return response.json();
       })

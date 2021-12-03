@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext, useState } from 'react'
 
 export const CartContext = createContext()
 
@@ -10,6 +10,10 @@ export const CartProvider = ({children}) => {
 
     const agregarAlCarrito = (item) => {
       setCarrito([...carrito, item])
+    }
+
+    const totalCantidad = () => {
+      return carrito.reduce((acc, prod) => acc + prod.cantidad, 0)
     }
   
     const removerDelCarrito = (id) => {

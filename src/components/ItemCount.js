@@ -11,12 +11,14 @@ export const ItemCount = ({max}) => {
         counter > 0 && setCounter(counter - 1)
     }
     return (
+        <section>
         <div className="counter-flex">
             <button onClick={decrementar}>-</button>
              <h2>{counter}</h2>
              <button onClick={incrementar}>+</button>
-             <button>Agregar al carrito</button>
         </div>
+        <button className="buy-1">Agregar al carrito</button>
+        </section>
     )
 }
 
