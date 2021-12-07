@@ -1,21 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import { Item } from './Item'
 
-export const ItemList = () => {
-  const [hp, setHp] = useState([])
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=11')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setHp(data);
-      });
-  }, []);
+export const ItemList = ({items}) => {
+  
 
-    return ( <div className="item-list">{hp !== false ? 
+    return ( <div className="item-list">{items !== false ? 
     
-            hp.map((producto, i)=>(
+            items.map((producto, i)=>(
               <Item key={i}
                 imagen={producto.image}
                 nombre={producto.title} 

@@ -1,9 +1,10 @@
-import { stock } from "../data/stock"
 
-export const pedirDatos = () => {
-    return new Promise((resolve, reject) => {         
-        setTimeout(() => {
-            resolve(stock)
-        }, 1000)
-    })
-}
+// export const pedirDatos = () => {
+//       return fetch('https://fakestoreapi.com/products?limit=11')
+//       .then((response) => {
+//         response.json();
+//       })
+//       .then((data) => {
+//         return data;
+//       });
+// }

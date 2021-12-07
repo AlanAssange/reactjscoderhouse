@@ -14,13 +14,19 @@ export const ItemListContainer = () => {
     useEffect(() => {
         
         setLoading(true)
-        pedirDatos()
+        fetch('https://fakestoreapi.com/products?limit=11')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        return data;
+      })
             .then( (resp) => {
-
+                console.log(resp)
                 if (!catId) {
                     setProductos(resp)
                 } else {
-                    setProductos( resp.filter( prod => prod.category === catId) )
+                    setProductos( resp.filter( prod => prod.category.includes(catId)) )
                 }
             })
             .catch( (error) => {
