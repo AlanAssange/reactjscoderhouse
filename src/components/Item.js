@@ -1,8 +1,9 @@
 import React from 'react'
 import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom'
 
 
-export const Item = ({ nombre, precio, descripcion,imagen }) => {
+export const Item = ({ id, nombre, precio, descripcion,imagen }) => {
     return (
       <div className="item">
         <article className="item-flex">
@@ -10,7 +11,7 @@ export const Item = ({ nombre, precio, descripcion,imagen }) => {
         <h3 className="card-title">{nombre}</h3>
         <p>Precio {precio}</p>
         <p>{descripcion}</p>
-        <ItemCount/>
+        <Link to={`/detail/${id}`}><button className="buy-1">Ver Más</button></Link>
         </article>
       </div>
     );

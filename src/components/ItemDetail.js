@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
 import { ItemCount } from './ItemCount'
 
-export const ItemDetail = ({id, name, img, desc, price, category, stock}) => {
+export const ItemDetail = ({id, name, img, desc, price, stock}) => {
 
     const {agregarAlCarrito, isInCart} = useContext(CartContext)
     
