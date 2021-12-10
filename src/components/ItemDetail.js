@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { ItemCount } from "./ItemCount";
 
-export const ItemDetail = ({ id, name, img, desc, price, stock }) => {
+export const ItemDetail = ({ id, title, image, description, price, stock }) => {
   const { agregarAlCarrito, isInCart } = useContext(CartContext);
 
   const navigate = useNavigate();
@@ -23,19 +23,20 @@ export const ItemDetail = ({ id, name, img, desc, price, stock }) => {
     if (cantidad > 0) {
       agregarAlCarrito({
         id,
-        name,
+        title,
         price,
-        img,
+        image,
         cantidad,
       });
     }
   };
+  console.log(image);
 
   return (
     <div>
-      <h2>{name}</h2>
-      <img src={img} alt={name} />
-      <p>{desc}</p>
+      <h2>{title}</h2>
+      <img src={image} alt={title} />
+      <p>{description}</p>
       <p>Precio: ${price}</p>
 
       {!isInCart(id) ? (

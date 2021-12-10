@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { CartContext } from "../context/CartContext";
 import { ItemDetail } from "./ItemDetail";
-import { pedirDatos } from "../helpers/pedirDatos";
 
 export const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(false);
   const [productos, setProductos] = useState([]);
 
-  const { itemId } = useParams();
+  const { itemId, catId } = useParams();
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://fakestoreapi.com/products/${itemId}")
+    fetch(`https://fakestoreapi.com/products/${itemId}`)
       .then((response) => {
         return response.json();
       })
@@ -20,8 +18,7 @@ export const ItemDetailContainer = () => {
         return data;
       })
       .then((resp) => {
-        console.log(resp);
-        if (!itemId) {
+        if (!catId) {
           setProductos(resp);
         } else {
           setProductos(resp.filter((prod) => prod.category.includes(itemId)));
@@ -34,6 +31,7 @@ export const ItemDetailContainer = () => {
         setLoading(false);
       });
   }, [itemId]);
+  console.log(productos);
 
   return (
     <div>{loading ? <h2>Cargando...</h2> : <ItemDetail {...productos} />}</div>
