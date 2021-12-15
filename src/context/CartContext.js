@@ -1,45 +1,49 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState } from "react";
 
-export const CartContext = createContext()
+export const CartContext = createContext();
 
 //custom provider
 
-export const CartProvider = ({children}) => {
+export const CartProvider = ({ children }) => {
+  const [carrito, setCarrito] = useState([]);
 
-    const [carrito,setCarrito] = useState ([])
+  const agregarAlCarrito = (item) => {
+    setCarrito([...carrito, item]);
+  };
 
-    const agregarAlCarrito = (item) => {
-      setCarrito([...carrito, item])
-    }
+  const totalCantidad = () => {
+    return carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
+  };
 
-    const totalCantidad = () => {
-      return carrito.reduce((acc, prod) => acc + prod.cantidad, 0)
-    }
-  
-    const removerDelCarrito = (id) => {
-      setCarrito(carrito.filter(prod => prod.id !== id))
-    
-    }
-  
-    const vaciarCarrito = () => {
-      setCarrito([])
-    }
-  
-    const isInCart = (id) => {
-      return carrito.some (prod => prod.id === id)
-    }
+  const removerDelCarrito = (id) => {
+    setCarrito(carrito.filter((prod) => prod.id !== id));
+  };
 
-    const totalCompra= () => {
-        return carrito.reduce((acc,prod) => acc + prod.precio * prod.cantidad,0)
-    }
-  
+  const vaciarCarrito = () => {
+    setCarrito([]);
+  };
 
-    return(
-        
-        <CartContext.Provider value={{carrito, agregarAlCarrito, removerDelCarrito,
-        vaciarCarrito,totalCantidad,isInCart,totalCompra}}>
-            {children}
-        </CartContext.Provider>
+  const isInCart = (id) => {
+    return carrito.some((prod) => prod.id === id);
+  };
 
-    )
-}
+  const totalCompra = () => {
+    return carrito.reduce((acc, prod) => acc + prod.price * prod.cantidad, 0);
+  };
+
+  return (
+    <CartContext.Provider
+      value={{
+        carrito,
+        agregarAlCarrito,
+        removerDelCarrito,
+        vaciarCarrito,
+        totalCantidad,
+        isInCart,
+        totalCompra,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};

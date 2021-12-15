@@ -11,16 +11,14 @@ export const ItemDetail = ({ id, title, image, description, price, stock }) => {
 
   const [cantidad, setCantidad] = useState(0);
 
-  const handleVolver = () => {
-    navigate(-1);
-  };
-
   const handleVolverInicio = () => {
     navigate("/");
   };
 
   const handleAgregar = () => {
+    console.log(cantidad);
     if (cantidad > 0) {
+      console.log(title);
       agregarAlCarrito({
         id,
         title,
@@ -30,12 +28,12 @@ export const ItemDetail = ({ id, title, image, description, price, stock }) => {
       });
     }
   };
-  console.log(image);
+  console.log(cantidad);
 
   return (
-    <div>
+    <div className="item">
       <h2>{title}</h2>
-      <img src={image} alt={title} />
+      <img className="card-img" src={image} alt={title} />
       <p>{description}</p>
       <p>Precio: ${price}</p>
 
@@ -43,17 +41,18 @@ export const ItemDetail = ({ id, title, image, description, price, stock }) => {
         <ItemCount
           max={stock}
           cantidad={cantidad}
-          setCantidad={setCantidad}
           onAdd={handleAgregar}
+          setCantidad={setCantidad}
         />
       ) : (
-        <Link to="/cart" className="btn btn-success d-block">
-          Terminar mi compra
+        <Link to="/cart">
+          <button>Terminar mi compra</button>
         </Link>
       )}
 
-      <button onClick={handleVolver}>Volver</button>
-      <button onClick={handleVolverInicio}>Volver al inicio</button>
+      <button className="buy-2" onClick={handleVolverInicio}>
+        Volver al inicio
+      </button>
     </div>
   );
 };
