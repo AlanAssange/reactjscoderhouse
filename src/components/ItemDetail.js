@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useParams } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
@@ -46,7 +46,7 @@ export const ItemDetail = ({ id, title, image, description, price, stock }) => {
         />
       ) : (
         <Link to="/cart">
-          <button>Terminar mi compra</button>
+          <button className="buy-1">Terminar mi compra</button>
         </Link>
       )}
 

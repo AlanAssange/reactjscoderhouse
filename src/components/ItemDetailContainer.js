@@ -1,31 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { ItemDetail } from "./ItemDetail";
+import { collection, doc, getDoc, getDocs } from "firebase/firestore/lite";
+import { db } from "../firebase/config";
 
 export const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(false);
   const [productos, setProductos] = useState([]);
-
-  const { itemId, catId } = useParams();
+  const { itemId } = useParams();
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://fakestoreapi.com/products/${itemId}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        return data;
-      })
-      .then((resp) => {
-        if (!catId) {
-          setProductos(resp);
-        } else {
-          setProductos(resp.filter((prod) => prod.category.includes(itemId)));
-        }
-      })
-      .catch((error) => {
-        console.log(error);
+    const productosRef = collection(db, "productos");
+    const docRef = doc(productosRef, itemId);
+    getDoc(docRef)
+      .then((doc) => {
+        setProductos({
+          id: doc.id,
+          ...doc.data(),
+        });
       })
       .finally(() => {
         setLoading(false);

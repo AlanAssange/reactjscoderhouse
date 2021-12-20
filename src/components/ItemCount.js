@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export const ItemCount = ({ max, onAdd, setCantidad }) => {
+export const ItemCount = ({ onAdd, setCantidad }) => {
   const [counter, setCounter] = useState(15);
 
   const incrementar = () => {

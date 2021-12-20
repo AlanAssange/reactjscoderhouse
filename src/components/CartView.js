@@ -4,7 +4,7 @@ import { CartContext } from "../context/CartContext";
 import { CartItem } from "./CartItem";
 
 export const CartView = ({}) => {
-  const { carrito, vaciarCarrito } = useContext(CartContext);
+  const { carrito, vaciarCarrito, totalCompra } = useContext(CartContext);
   const terminarMiCompra = () => {
     vaciarCarrito();
     console.log("Compra realizada satisfactoriamente");
@@ -20,6 +20,7 @@ export const CartView = ({}) => {
       </section>
       <hr></hr>
       <div>
+        <p>Total: ${totalCompra()} </p>
         <button onClick={vaciarCarrito}>Vaciar Carrito</button>
         <button onClick={terminarMiCompra}>Terminar mi compra</button>
       </div>
