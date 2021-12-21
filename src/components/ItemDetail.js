@@ -16,9 +16,7 @@ export const ItemDetail = ({ id, title, image, description, price, stock }) => {
   };
 
   const handleAgregar = () => {
-    console.log(cantidad);
     if (cantidad > 0) {
-      console.log(title);
       agregarAlCarrito({
         id,
         title,
@@ -28,7 +26,6 @@ export const ItemDetail = ({ id, title, image, description, price, stock }) => {
       });
     }
   };
-  console.log(cantidad);
 
   return (
     <div className="item">

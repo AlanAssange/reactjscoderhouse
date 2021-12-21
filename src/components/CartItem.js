@@ -12,6 +12,7 @@ export const CartItem = ({ title, price, cantidad, id }) => {
       <p>Precio: ${price}</p>
       <p>Cantidad: {cantidad}</p>
       <button
+        className="fatr"
         onClick={() => {
           removerDelCarrito(id);
         }}

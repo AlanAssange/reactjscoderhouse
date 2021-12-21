@@ -98,16 +98,15 @@ export const Checkout = () => {
       {carrito.length === 0 ? (
         <Navigate to="/" />
       ) : (
-        <div className="container my-5">
+        <div>
           <h2>Resumen de compra</h2>
           <hr />
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="formulary">
             <input
               onChange={handleInputChange}
               name="nombre"
               value={values.nombre}
-              className="form-control my-2"
               type="text"
               placeholder="nombre"
             />
@@ -117,7 +116,6 @@ export const Checkout = () => {
               onChange={handleInputChange}
               name="apellido"
               value={values.apellido}
-              className="form-control my-2"
               type="text"
               placeholder="apellido"
             />
@@ -127,7 +125,6 @@ export const Checkout = () => {
               onChange={handleInputChange}
               name="email"
               value={values.email}
-              className="form-control my-2"
               type="email"
               placeholder="email"
             />
@@ -137,7 +134,6 @@ export const Checkout = () => {
               onChange={handleInputChange}
               name="emailConfirm"
               value={values.emailConfirm}
-              className="form-control my-2"
               type="email"
               placeholder="Repita email"
             />
@@ -145,7 +141,7 @@ export const Checkout = () => {
               <small>Email no coincide</small>
             )}
 
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="buy-1">
               Enviar
             </button>
           </form>

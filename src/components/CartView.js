@@ -1,15 +1,10 @@
-import React from "react";
-import { useContext } from "react/cjs/react.development";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { CartItem } from "./CartItem";
 
-export const CartView = ({}) => {
+export const CartView = () => {
   const { carrito, vaciarCarrito, totalCompra } = useContext(CartContext);
-  const terminarMiCompra = () => {
-    vaciarCarrito();
-    console.log("Compra realizada satisfactoriamente");
-  };
   return (
     <div>
       <p>Cart View</p>
@@ -22,11 +17,13 @@ export const CartView = ({}) => {
       <hr></hr>
       <div>
         <p>Total: ${totalCompra()} </p>
-        <button onClick={vaciarCarrito}>Vaciar Carrito</button>
-        <Link to="/checkout">Terminar mi compra</Link>
+        <button onClick={vaciarCarrito} className="buy-3">
+          Vaciar Carrito
+        </button>
+        <Link to="/checkout">
+          <button className="buy-4">Continuar</button>
+        </Link>
       </div>
     </div>
   );
 };
-
-// onClick={terminarMiCompra}

@@ -112,3 +112,45 @@ nav {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
+.fatr {
+  color: red;
+  display: inline-block;
+}
+
+.formulary {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  width: 400px;
+}
+
+.buy-3 {
+  text-align: center;
+  font-size: 15px;
+  background-color: rgb(219, 14, 14);
+  color: #fff;
+  width: 7%;
+  padding: 15px;
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+  margin-top: 5px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.buy-4 {
+  text-align: center;
+  font-size: 15px;
+  background-color: green;
+  color: #fff;
+  width: 7%;
+  padding: 15px;
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+  margin-top: 5px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}

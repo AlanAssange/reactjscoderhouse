@@ -24,8 +24,6 @@ export const ItemDetailContainer = () => {
         setLoading(false);
       });
   }, [itemId]);
-  console.log(productos);
-
   return (
     <div>{loading ? <h2>Cargando...</h2> : <ItemDetail {...productos} />}</div>
   );

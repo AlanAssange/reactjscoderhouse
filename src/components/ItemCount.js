@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 export const ItemCount = ({ onAdd, setCantidad }) => {
-  const [counter, setCounter] = useState(15);
+  const [counter, setCounter] = useState(0);
 
   const incrementar = () => {
     setCounter(counter + 1);
@@ -9,7 +9,7 @@ export const ItemCount = ({ onAdd, setCantidad }) => {
 
   useEffect(() => {
     setCantidad(counter);
-  }, [counter]);
+  });
 
   //agregar condición con el max//
 
