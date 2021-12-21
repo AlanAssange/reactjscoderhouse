@@ -23,10 +23,10 @@ export const CartView = ({}) => {
       <div>
         <p>Total: ${totalCompra()} </p>
         <button onClick={vaciarCarrito}>Vaciar Carrito</button>
-        <Link to="/checkout" onClick={terminarMiCompra}>
-          Terminar mi compra
-        </Link>
+        <Link to="/checkout">Terminar mi compra</Link>
       </div>
     </div>
   );
 };
+
+// onClick={terminarMiCompra}
