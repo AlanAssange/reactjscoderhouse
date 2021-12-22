@@ -11,8 +11,6 @@ export const ItemCount = ({ onAdd, setCantidad }) => {
     setCantidad(counter);
   });
 
-  //agregar condición con el max//
-
   const decrementar = () => {
     counter > 0 && setCounter(counter - 1);
   };
