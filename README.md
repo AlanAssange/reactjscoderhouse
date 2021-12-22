@@ -7,9 +7,11 @@ npm start para levantar la app. También puede abrirse desde el navegador dirigi
 
 Se utilizó React, CSS vanilla, Swal y una API pre-establecida (FakeStoreAPI[https://fakestoreapi.com/]) para realizar este proyecto. Dentro de react fue utilizado:
 
-React hooks/ react router dom / context / react MAPS
+React hooks/ react router dom / context
 .
 
 También utilizamos otras tecnologías, como Firebase, con el motivo de crear un servidor que almacene nuestros productos y así contar con una base de datos para el e-commerce.
+
+GIF demostrativo sobre los procedimientos al realizar una compra: https://gifyu.com/image/SSqcZ
 
 License: Free to copy.
